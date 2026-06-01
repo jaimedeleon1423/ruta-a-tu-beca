@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+:root {
+  --rotaract-cranberry: #c10042;
+  --rotaract-cranberry-light: #f5e6ec;
+  --rotaract-cranberry-mid: #e8336a;
+  --rotaract-blue: #0c3c7c;
+  --rotaract-blue-mid: #0050a2;
+  --rotaract-blue-light: #e8f0fb;
+  --rotaract-gold: #f7a81b;
+  --rotaract-gold-light: #fff8e6;
+  --bg: #f8f7f5;
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a4a6a;
+  --text-muted: #8888aa;
+  --border: rgba(12, 60, 124, 0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-tap-highlight-color: transparent; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  min-height: 100dvh;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+::selection { background: var(--rotaract-cranberry-light); color: var(--rotaract-cranberry); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up   { animation: fadeUp 0.5s ease forwards; }
+.animate-fade-up-2 { animation: fadeUp 0.5s 0.1s ease both; }
+.animate-fade-up-3 { animation: fadeUp 0.5s 0.2s ease both; }
+.animate-fade-up-4 { animation: fadeUp 0.5s 0.3s ease both; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--rotaract-cranberry); border-radius: 99px; }
+
+/* MOBILE: show bottom nav, hide desktop nav links */
+.nav-desktop-links { display: none !important; }
+.nav-mobile-btn    { display: block !important; }
+.bottom-nav-mobile { display: block !important; }
+
+main { padding-bottom: 70px; }
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .nav-desktop-links { display: flex !important; }
+  .nav-mobile-btn    { display: none !important; }
+  .bottom-nav-mobile { display: none !important; }
+  main { padding-bottom: 40px; }
+}
