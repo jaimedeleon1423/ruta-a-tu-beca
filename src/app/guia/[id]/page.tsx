@@ -10,7 +10,7 @@ const guias: Record<string, {
 }> = {
   '1': {
     titulo: '¿Qué quiero estudiar?', emoji: '🤔', modulo: 1,
-    foto: 'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=1200&q=80',
+    foto: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1200&q=80q=80',
     intro: 'Antes de buscar una beca, lo más importante es conocerte a ti mismo. Esta guía te ayudará a descubrir qué quieres estudiar.',
     prevId: undefined, nextId: 2,
     secciones: [
@@ -22,7 +22,7 @@ const guias: Record<string, {
   },
   '2': {
     titulo: 'Tipos de bachillerato en Guatemala', emoji: '🏫', modulo: 1,
-    foto: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1200&q=80',
+    foto: 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1200https://images.unsplash.com/photo-1504275107627-0c2ba7a43dba?w=1200&q=80q=80',
     intro: 'En Guatemala existen varios tipos de diversificado. Aquí te explicamos las opciones más comunes para que puedas elegir con información.',
     prevId: 1, nextId: 3,
     secciones: [
@@ -35,7 +35,7 @@ const guias: Record<string, {
   },
   '3': {
     titulo: 'Cómo elegir el bachillerato adecuado', emoji: '🧭', modulo: 1,
-    foto: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80',
+    foto: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&q=80q=80',
     intro: 'Ya conoces las opciones. Ahora te ayudamos a tomar la mejor decisión para tu situación y tus metas.',
     prevId: 2, nextId: 4,
     secciones: [
@@ -47,7 +47,7 @@ const guias: Record<string, {
   },
   '4': {
     titulo: '¿Qué es una beca?', emoji: '🎓', modulo: 2,
-    foto: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=80',
+    foto: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80q=80',
     intro: 'Si nunca has solicitado una beca o no tienes claro qué es exactamente, esta guía es para ti.',
     prevId: 3, nextId: 6,
     secciones: [
@@ -59,7 +59,7 @@ const guias: Record<string, {
   },
   '6': {
     titulo: 'Otras becas en Guatemala', emoji: '🔍', modulo: 2,
-    foto: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80',
+    foto: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1200https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&q=80q=80',
     intro: 'Además de la Beca Vista Hermosa, existen otras oportunidades educativas en Guatemala que vale la pena conocer.',
     prevId: 4, nextId: 7,
     secciones: [
@@ -72,7 +72,7 @@ const guias: Record<string, {
   },
   '7': {
     titulo: 'Documentos que necesitas', emoji: '📄', modulo: 3,
-    foto: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80',
+    foto: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=80q=80',
     intro: 'Reunir los documentos correctos es el primer paso para aplicar. Aquí tienes la lista completa explicada.',
     prevId: 6, nextId: 8,
     secciones: [
@@ -85,7 +85,7 @@ const guias: Record<string, {
   },
   '8': {
     titulo: 'Cómo escribir tu ensayo', emoji: '✍️', modulo: 3,
-    foto: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&q=80',
+    foto: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&q=80q=80',
     intro: 'La carta de solicitud es tu voz en el proceso. Aquí te enseñamos cómo escribirla de manera que realmente impacte.',
     prevId: 7, nextId: 9,
     secciones: [
@@ -97,7 +97,7 @@ const guias: Record<string, {
   },
   '9': {
     titulo: 'La entrevista: cómo prepararte', emoji: '🎤', modulo: 3,
-    foto: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=80',
+    foto: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=80q=80',
     intro: 'Si llegas a la etapa de entrevista, es una muy buena señal. Aquí te preparamos para ese momento importante.',
     prevId: 8, nextId: 10,
     secciones: [
@@ -109,7 +109,7 @@ const guias: Record<string, {
   },
   '10': {
     titulo: 'Construye tu perfil', emoji: '🌟', modulo: 3,
-    foto: 'https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1200&q=80',
+    foto: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80q=80',
     intro: 'Un perfil sobresaliente se construye con el tiempo. Aquí te decimos qué puedes hacer ahora mismo para mejorar tus posibilidades.',
     prevId: 9, nextId: 11,
     secciones: [
@@ -120,7 +120,7 @@ const guias: Record<string, {
   },
   '11': {
     titulo: 'Si no obtienes la beca esta vez', emoji: '💙', modulo: 4,
-    foto: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&q=80',
+    foto: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1200https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1200&q=80q=80',
     intro: 'No obtener la beca es difícil. Pero no es el fin. Esta guía es para ayudarte a procesar ese momento y seguir adelante.',
     prevId: 10, nextId: 12,
     secciones: [
@@ -132,7 +132,7 @@ const guias: Record<string, {
   },
   '12': {
     titulo: 'Mantén la motivación', emoji: '🔥', modulo: 4,
-    foto: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80',
+    foto: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80q=80',
     intro: 'El camino hacia tu beca puede ser largo. Estas herramientas te ayudarán a mantenerte enfocado/a cuando las cosas se pongan difíciles.',
     prevId: 11, nextId: undefined,
     secciones: [

@@ -47,7 +47,7 @@ export default function BecaVistaHermosaPage() {
         position: 'relative', height: 320,
       }}>
         <img
-          src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1200&q=80"
+          src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1200https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1200&q=80q=80"
           alt="Estudiantes guatemaltecos"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
@@ -140,7 +140,7 @@ export default function BecaVistaHermosaPage() {
         <div>
           {/* FOTO */}
           <div style={{ borderRadius: 20, overflow: 'hidden', marginBottom: 20, height: 220 }}>
-            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" alt="Estudiantes en clase" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80q=80" alt="Estudiantes en clase" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
 
           {/* PERFIL IDEAL */}

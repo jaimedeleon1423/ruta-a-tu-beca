@@ -92,9 +92,9 @@ export default function HomePage() {
         {/* FOTOS INSPIRACIONALES */}
         <div className="foto-row" style={{ marginBottom: 20 }}>
           {[
-            { url: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80', caption: 'Estudiantes listos para el futuro' },
-            { url: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80', caption: 'El conocimiento abre puertas' },
-            { url: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80', caption: 'Tu esfuerzo tiene recompensa' },
+            { url: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80q=80', caption: 'Estudiantes listos para el futuro' },
+            { url: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80q=80', caption: 'El conocimiento abre puertas' },
+            { url: 'https://images.unsplash.com/photo-1627556704302-624286467c65?w=600https://images.unsplash.com/photo-1504275107627-0c2ba7a43dba?w=600&q=80q=80', caption: 'Tu esfuerzo tiene recompensa' },
           ].map((foto, i) => (
             <div key={i} style={{ borderRadius: 18, overflow: 'hidden', position: 'relative', height: 200 }}>
               <img src={foto.url} alt={foto.caption} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -150,7 +150,7 @@ export default function HomePage() {
             {testimonios.map((t, i) => (
               <div key={i} style={{ background: 'white', borderRadius: 18, overflow: 'hidden', border: '1px solid var(--border)' }}>
                 <img
-                  src={i === 0 ? 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&q=80' : i === 1 ? 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80' : 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&q=80'}
+                  src={i === 0 ? 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80q=80' : i === 1 ? 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&q=80q=80' : 'https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=400https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=400&q=80q=80'}
                   alt={t.nombre}
                   style={{ width: '100%', height: 160, objectFit: 'cover' }}
                 />
