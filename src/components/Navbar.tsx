@@ -29,7 +29,12 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-          <img src="/logos-01.png" alt="Rotaract Guatemala Vista Hermosa" style={{ height: 38, width: 'auto' }} />
+          <div style={{ background: 'var(--rotaract-cranberry)', borderRadius: 10, padding: '4px 10px', display: 'flex', alignItems: 'center' }}>
+            <img src="/logos-02.png" alt="Rotaract Guatemala Vista Hermosa" style={{ height: 32, width: 'auto' }} />
+          </div>
+          <span style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 700, fontSize: 15, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>
+            Ruta a tu Beca
+          </span>
         </Link>
 
         {/* Desktop links */}
