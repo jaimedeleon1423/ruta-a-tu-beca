@@ -30,9 +30,6 @@ export default function Navbar() {
         {/* Logo - cranberry on white, transparent bg */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
           <img src="/logos-01.png" alt="Rotaract Guatemala Vista Hermosa" style={{ height: 36, width: 'auto' }} />
-          <span style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 700, fontSize: 15, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>
-            Ruta a tu Beca
-          </span>
         </Link>
 
         {/* Desktop links */}
