@@ -27,11 +27,9 @@ export default function Navbar() {
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
 
-        {/* Logo */}
+        {/* Logo - cranberry on white, transparent bg */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-          <div style={{ background: 'var(--rotaract-cranberry)', borderRadius: 10, padding: '4px 10px', display: 'flex', alignItems: 'center' }}>
-            <img src="/logos-02.png" alt="Rotaract Guatemala Vista Hermosa" style={{ height: 32, width: 'auto' }} />
-          </div>
+          <img src="/logos-01.png" alt="Rotaract Guatemala Vista Hermosa" style={{ height: 36, width: 'auto' }} />
           <span style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 700, fontSize: 15, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>
             Ruta a tu Beca
           </span>
