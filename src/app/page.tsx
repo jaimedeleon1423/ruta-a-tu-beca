@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, MapPin, Star, ChevronRight, Sparkles, Award, Clock } from 'lucide-react';
+import { ArrowRight, MapPin, Star, ChevronRight, Sparkles, Award, Clock, BookOpen, FileText, Users, Trophy } from 'lucide-react';
 
 const modulos = [
   { id: 1, emoji: '🧭', title: 'Descubre tu camino', desc: 'Explora qué quieres estudiar y conoce los tipos de bachillerato en Guatemala.', guias: 3, color: '#e8f0fb', accent: '#0050a2', border: 'rgba(0,80,162,0.18)', href: '/modulo/1' },
@@ -20,6 +20,13 @@ const stats = [
   { valor: '100%', label: 'matrícula y mensualidades', icon: <Sparkles size={20} color="rgba(255,255,255,0.7)" /> },
 ];
 
+const pasos = [
+  { num: '01', icon: <BookOpen size={22} color="#0050a2" />, titulo: 'Explora tu camino', desc: 'Conoce los tipos de bachillerato y elige la carrera que va contigo.', color: '#e8f0fb', accent: '#0050a2' },
+  { num: '02', icon: <Star size={22} color="#c10042" />, titulo: 'Encuentra tu beca', desc: 'Descubre becas disponibles para estudiantes guatemaltecos.', color: '#fff3f7', accent: '#c10042' },
+  { num: '03', icon: <FileText size={22} color="#1a7a3c" />, titulo: 'Arma tu aplicación', desc: 'Redacta tu ensayo, prepara documentos y destaca en la entrevista.', color: '#f0faf4', accent: '#1a7a3c' },
+  { num: '04', icon: <Trophy size={22} color="#b86000" />, titulo: 'Consigue tu beca', desc: 'Recibe el apoyo económico y comienza tu carrera con confianza.', color: '#fff8ec', accent: '#b86000' },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -30,7 +37,7 @@ export default function HomePage() {
         .modulos-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
         .testimonios-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
         .bottom-row { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; }
-        .foto-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .pasos-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
         @media (max-width: 900px) {
           .home-wrap { padding: 20px 20px 32px; }
           .hero-inner { flex-direction: column; }
@@ -38,11 +45,11 @@ export default function HomePage() {
           .modulos-row { grid-template-columns: repeat(2, 1fr); }
           .testimonios-row { grid-template-columns: 1fr; }
           .bottom-row { grid-template-columns: 1fr; }
-          .foto-row { grid-template-columns: repeat(2, 1fr); }
+          .pasos-row { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 600px) {
           .modulos-row { grid-template-columns: 1fr; }
-          .foto-row { grid-template-columns: 1fr; }
+          .pasos-row { grid-template-columns: 1fr; }
         }
       `}</style>
 
@@ -89,20 +96,28 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* FOTOS INSPIRACIONALES */}
-        <div className="foto-row" style={{ marginBottom: 20 }}>
-          {[
-            { url: '/guadalupe.jpg', caption: 'Guadalupe · Becada 2024' },
-            { url: '/laura.jpg', caption: 'Laura Sofía · Becada 2024' },
-            { url: '/alison.jpg', caption: 'Alison · Becada 2024' },
-          ].map((foto, i) => (
-            <div key={i} style={{ borderRadius: 18, overflow: 'hidden', position: 'relative', height: 200 }}>
-              <img src={foto.url} alt={foto.caption} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
-              <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(transparent, rgba(0,0,0,0.65))', padding: '20px 16px 12px' }}>
-                <span style={{ color: 'white', fontSize: 13, fontWeight: 500 }}>{foto.caption}</span>
-              </div>
+        {/* CÓMO FUNCIONA */}
+        <div style={{ marginBottom: 28 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
+            <div>
+              <h2 style={{ fontSize: 20, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 4 }}>¿Cómo funciona Ruta a tu Beca?</h2>
+              <p style={{ fontSize: 13, color: 'var(--text-secondary)' }}>4 pasos para pasar de la duda a la beca</p>
             </div>
-          ))}
+            <Link href="/modulo/1" style={{ fontSize: 13, fontWeight: 600, color: 'var(--rotaract-cranberry)', textDecoration: 'none' }}>Ver todo →</Link>
+          </div>
+          <div className="pasos-row">
+            {pasos.map((p, i) => (
+              <div key={i} style={{ background: p.color, border: `1.5px solid ${p.accent}22`, borderRadius: 20, padding: '20px', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ position: 'absolute', top: 12, right: 16, fontSize: 36, fontWeight: 900, color: p.accent, opacity: 0.08, lineHeight: 1, fontFamily: 'monospace' }}>{p.num}</div>
+                <div style={{ width: 44, height: 44, borderRadius: 13, background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14, boxShadow: '0 2px 8px rgba(0,0,0,0.07)' }}>
+                  {p.icon}
+                </div>
+                <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 6 }}>{p.titulo}</div>
+                <p style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.5 }}>{p.desc}</p>
+                <div style={{ marginTop: 14, width: 28, height: 3, borderRadius: 99, background: p.accent, opacity: 0.5 }} />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* BECA DESTACADA */}
