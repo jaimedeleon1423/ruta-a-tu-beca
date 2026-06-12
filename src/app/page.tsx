@@ -150,7 +150,7 @@ export default function HomePage() {
             {testimonios.map((t, i) => (
               <div key={i} style={{ background: 'white', borderRadius: 18, overflow: 'hidden', border: '1px solid var(--border)' }}>
                 <img
-                  src={i === 0 ? 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80q=80' : i === 1 ? 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&q=80q=80' : 'https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=400https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=400&q=80q=80'}
+                  src={i === 0 ? 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=400&q=80q=80' : i === 1 ? 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&q=80q=80' : 'https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=400https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400&q=80q=80'}
                   alt={t.nombre}
                   style={{ width: '100%', height: 160, objectFit: 'cover' }}
                 />
