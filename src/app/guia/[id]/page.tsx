@@ -47,7 +47,7 @@ const guias: Record<string, {
   },
   '4': {
     titulo: '¿Qué es una beca?', emoji: '🎓', modulo: 2,
-    foto: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80q=80',
+    foto: '/guia-4-header.jpg',
     intro: 'Si nunca has solicitado una beca o no tienes claro qué es exactamente, esta guía es para ti.',
     prevId: 3, nextId: 6,
     secciones: [
