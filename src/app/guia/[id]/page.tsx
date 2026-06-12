@@ -187,7 +187,7 @@ const moduloColors: Record<number, { bg: string; accent: string; border: string 
   4: { bg: '#fff8ec', accent: '#b86000', border: '#b8600020' },
 };
 
-function SeccionContenido({ sec, colors }: { sec: { titulo: string; contenido: string; tipo?: string }, colors: { bg: string; accent: string; border: string } }) {
+function SeccionContenido({ sec, colors }: { sec: { titulo: string; contenido: string; tipo?: string; pasos?: {num: string; titulo: string; desc: string; ejemplo: string}[] }, colors: { bg: string; accent: string; border: string } }) {
   if (sec.tipo === 'tip') {
     return (
       <div style={{ background: colors.bg, borderRadius: 14, padding: '16px 20px', border: `1px solid ${colors.border}`, display: 'flex', gap: 12 }}>
