@@ -120,7 +120,7 @@ const guias: Record<string, {
   },
   '11': {
     titulo: 'Si no obtienes la beca esta vez', emoji: '💙', modulo: 4,
-    foto: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1200https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1200&q=80q=80',
+    foto: '/guia-11-header.jpg',
     intro: 'No obtener la beca es difícil. Pero no es el fin. Esta guía es para ayudarte a procesar ese momento y seguir adelante.',
     prevId: 10, nextId: 12,
     secciones: [
