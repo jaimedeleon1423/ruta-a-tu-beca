@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 const guias: Record<string, {
   titulo: string; emoji: string; modulo: number; intro: string;
   foto?: string;
-  secciones: { titulo: string; contenido: string; tipo?: 'normal' | 'tip' | 'checklist' | 'ejemplo' | 'warning' }[];
+  secciones: { titulo: string; contenido: string; tipo?: 'normal' | 'tip' | 'checklist' | 'ejemplo' | 'warning' | 'estructura'; pasos?: {num: string; titulo: string; desc: string; ejemplo: string}[] }[];
   prevId?: number; nextId?: number
 }> = {
   '1': {
@@ -90,7 +90,43 @@ const guias: Record<string, {
     prevId: 7, nextId: 9,
     secciones: [
       { titulo: 'Antes de escribir: piensa en estas preguntas', tipo: 'checklist', contenido: '¿Quién soy más allá de mi nombre?\n¿Por qué quiero estudiar esta carrera específica?\n¿Cuál es mi situación económica real?\n¿Qué haré con esta beca si me la dan?\n¿Cuál es mi sueño y cómo esta beca me acerca a él?' },
-      { titulo: 'Estructura recomendada', contenido: 'Párrafo 1: Preséntate\nNo solo digas tu nombre. Cuéntales quién eres. Incluye tu nombre completo, tu edad, el municipio o comunidad donde vives, y el instituto donde cursaste tu básico. Si hay algo de tu historia personal que sea relevante — como que eres la primera persona en tu familia en llegar al diversificado — este es el momento de mencionarlo.\nEjemplo: "Mi nombre es María García, tengo 15 años y vivo en San Juan Sacatepéquez. Estudié mi ciclo básico en el Instituto Nacional de San Juan, donde fui representante estudiantil en tercer grado."\n\nPárrafo 2: Tu carrera y tu por qué\nNo solo menciones la carrera. Explica qué te llamó la atención de ella, cuándo te diste cuenta de que era lo tuyo, y cómo se conecta con tus metas de vida. Cuanto más específico y personal sea tu relato, más memorable será tu carta.\nEjemplo: "Quiero estudiar Magisterio de Educación Primaria porque desde pequeña he visto cómo la falta de buenos maestros afecta a los niños de mi comunidad. Quiero ser parte del cambio."\n\nPárrafo 3: Tu situación económica\nSé honesto y directo. No necesitas dar todos los detalles, pero sí explicar por qué necesitas el apoyo. Menciona si tu familia depende de un solo ingreso, si hay hermanos que también estudian, o si existe alguna otra dificultad económica.\nEjemplo: "Mi familia depende del trabajo de mi mamá como vendedora en el mercado. Somos cuatro hermanos y aunque ella hace todo lo posible, el costo del diversificado es una carga muy grande para ella."\n\nPárrafo 4: Por qué mereces esta beca\nEste párrafo no es para presumir — es para demostrar compromiso. Habla de tu trayectoria académica, de tus actitudes y de cómo planeas devolver ese apoyo a tu comunidad en el futuro.\nEjemplo: "Mantuve un promedio de 88 puntos en básico a pesar de que muchas veces tuve que estudiar sin luz eléctrica. Me comprometo a mantener mis calificaciones y a participar activamente en las actividades del Rotaract."\n\nCierre: Agradece y comprométete\nTermina con una oración de agradecimiento genuina y una declaración de compromiso.\nEjemplo: "Agradezco profundamente la oportunidad que el Club Rotaract Guatemala Vista Hermosa brinda a jóvenes como yo. Me comprometo a honrar esta beca con esfuerzo, dedicación y gratitud."' },
+      {
+        titulo: 'Estructura recomendada',
+        tipo: 'estructura',
+        contenido: '',
+        pasos: [
+          {
+            num: '01',
+            titulo: 'Preséntate',
+            desc: 'No solo digas tu nombre. Cuéntales quién eres: tu nombre completo, tu edad, el municipio donde vives y el instituto donde cursaste tu básico. Si hay algo especial en tu historia —como ser la primera persona en tu familia en llegar al diversificado— este es el momento de mencionarlo.',
+            ejemplo: 'Mi nombre es María García, tengo 15 años y vivo en San Juan Sacatepéquez. Estudié mi ciclo básico en el Instituto Nacional de San Juan, donde fui representante estudiantil en tercer grado.',
+          },
+          {
+            num: '02',
+            titulo: 'Tu carrera y tu por qué',
+            desc: 'No solo menciones la carrera. Explica qué te llamó la atención de ella, cuándo te diste cuenta de que era lo tuyo, y cómo se conecta con tus metas de vida. Cuanto más específico y personal, más memorable será tu carta.',
+            ejemplo: 'Quiero estudiar Magisterio de Educación Primaria porque desde pequeña he visto cómo la falta de buenos maestros afecta a los niños de mi comunidad. Quiero ser parte del cambio.',
+          },
+          {
+            num: '03',
+            titulo: 'Tu situación económica',
+            desc: 'Sé honesto y directo. No necesitas dar todos los detalles, pero sí explicar por qué necesitas el apoyo. Menciona si tu familia depende de un solo ingreso, si hay hermanos que también estudian, o si existe otra dificultad económica.',
+            ejemplo: 'Mi familia depende del trabajo de mi mamá como vendedora en el mercado. Somos cuatro hermanos y aunque ella hace todo lo posible, el costo del diversificado es una carga muy grande para ella.',
+          },
+          {
+            num: '04',
+            titulo: 'Por qué mereces esta beca',
+            desc: 'Este párrafo no es para presumir — es para demostrar compromiso. Habla de tu trayectoria académica, tus actitudes y cómo planeas devolver ese apoyo a tu comunidad en el futuro.',
+            ejemplo: 'Mantuve un promedio de 88 puntos en básico a pesar de que muchas veces tuve que estudiar sin luz eléctrica. Me comprometo a mantener mis calificaciones y a participar activamente en las actividades del Rotaract.',
+          },
+          {
+            num: '05',
+            titulo: 'Cierre: Agradece y comprométete',
+            desc: 'Termina con una oración de agradecimiento genuina y una declaración de compromiso. Es tu última impresión — hazla memorable.',
+            ejemplo: 'Agradezco profundamente la oportunidad que el Club Rotaract Guatemala Vista Hermosa brinda a jóvenes como yo. Me comprometo a honrar esta beca con esfuerzo, dedicación y gratitud.',
+          },
+        ],
+      },
       { titulo: '💡 Lo que hace que una carta destaque', tipo: 'tip', contenido: 'Sé específico: no digas "quiero ser alguien en la vida", di "quiero ser maestra para enseñar en mi comunidad". Las historias reales y concretas conectan mucho más que las frases generales.' },
       { titulo: 'Lo que debes evitar', tipo: 'warning', contenido: 'No copies cartas de internet: se nota inmediatamente y demuestra falta de compromiso. No exageres tu situación. No seas demasiado corto: una carta de 3-4 párrafos es lo mínimo aceptable.' },
     ],
@@ -159,6 +195,35 @@ function SeccionContenido({ sec, colors }: { sec: { titulo: string; contenido: s
         <div>
           <div style={{ fontSize: 14, fontWeight: 700, color: colors.accent, marginBottom: 6 }}>{sec.titulo.replace('💡 ', '')}</div>
           <div style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7, whiteSpace: 'pre-line' }}>{sec.contenido}</div>
+        </div>
+      </div>
+    );
+  }
+  if (sec.tipo === 'estructura' && sec.pasos) {
+    return (
+      <div>
+        <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 20, lineHeight: 1.3 }}>{sec.titulo}</h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          {sec.pasos.map((paso, i) => (
+            <div key={i} style={{ borderRadius: 16, border: `1.5px solid ${colors.border}`, overflow: 'hidden' }}>
+              {/* Header del paso */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '14px 20px', background: colors.bg, borderBottom: `1px solid ${colors.border}` }}>
+                <div style={{ width: 36, height: 36, borderRadius: 10, background: colors.accent, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <span style={{ fontSize: 13, fontWeight: 800, color: 'white', fontFamily: 'monospace' }}>{paso.num}</span>
+                </div>
+                <span style={{ fontSize: 15, fontWeight: 700, color: 'var(--text-primary)' }}>{paso.titulo}</span>
+              </div>
+              {/* Descripción */}
+              <div style={{ padding: '14px 20px 0', background: 'white' }}>
+                <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>{paso.desc}</p>
+              </div>
+              {/* Ejemplo */}
+              <div style={{ margin: '12px 20px 16px', background: '#f0faf4', borderRadius: 10, padding: '12px 16px', borderLeft: '3px solid #1a7a3c' }}>
+                <div style={{ fontSize: 11, fontWeight: 700, color: '#1a7a3c', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 6 }}>Ejemplo</div>
+                <p style={{ fontSize: 13, color: '#1a4a28', lineHeight: 1.65, margin: 0, fontStyle: 'italic' }}>&ldquo;{paso.ejemplo}&rdquo;</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     );
@@ -275,3 +340,4 @@ export default async function GuiaPage({ params }: { params: Promise<{ id: strin
 export async function generateStaticParams() {
   return ['1','2','3','4','6','7','8','9','10','11','12'].map(id => ({ id }));
 }
+
