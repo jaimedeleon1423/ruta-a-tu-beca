@@ -72,7 +72,7 @@ const guias: Record<string, {
   },
   '7': {
     titulo: 'Documentos que necesitas', emoji: '📄', modulo: 3,
-    foto: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=80q=80',
+    foto: '/estudiante-1.jpg',
     intro: 'Reunir los documentos correctos es el primer paso para aplicar. Aquí tienes la lista completa explicada.',
     prevId: 6, nextId: 8,
     secciones: [
