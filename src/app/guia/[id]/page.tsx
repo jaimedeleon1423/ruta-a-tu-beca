@@ -97,7 +97,7 @@ const guias: Record<string, {
   },
   '9': {
     titulo: 'La entrevista: cómo prepararte', emoji: '🎤', modulo: 3,
-    foto: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=80q=80',
+    foto: '/estudiante-2.jpg',
     intro: 'Si llegas a la etapa de entrevista, es una muy buena señal. Aquí te preparamos para ese momento importante.',
     prevId: 8, nextId: 10,
     secciones: [
