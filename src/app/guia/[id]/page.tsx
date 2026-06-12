@@ -30,7 +30,9 @@ const guias: Record<string, {
       { titulo: 'Magisterio', contenido: 'Te forma para ser maestro/a de primaria o preprimaria. Es una opción muy valorada, especialmente en comunidades rurales. El título te permite trabajar inmediatamente como docente.\n\n⏱ Duración: 3 años' },
       { titulo: 'Perito Contador', contenido: 'Enfocado en contabilidad, finanzas y administración de empresas. Muy útil si te interesa el área de negocios. Te permite trabajar en el área contable al graduarte.\n\n⏱ Duración: 3 años' },
       { titulo: 'Bachillerato en Computación', contenido: 'Combina el bachillerato general con formación en tecnología e informática. Ideal si te apasiona la tecnología y los sistemas.\n\n⏱ Duración: 2-3 años' },
-      { titulo: '💡 ¿Cuál te conviene?', tipo: 'tip', contenido: 'Si quieres ir a la universidad, el Bachillerato en Ciencias y Letras es la mejor puerta. Si quieres trabajar pronto, el Magisterio o el Perito te dan herramientas inmediatas.' },
+      { titulo: 'Bachillerato en Secretariado', contenido: 'Te prepara para trabajar en oficinas, empresas e instituciones como secretaria/o o asistente administrativa. Desarrollas habilidades en redacción, archivo, computación y atención al cliente. Es una carrera con alta demanda laboral.\n\n⏱ Duración: 2-3 años' },
+      { titulo: 'Bachillerato en Diseño Gráfico', contenido: 'Combina creatividad y tecnología. Aprendes a crear piezas visuales, manejar software de diseño y comunicar ideas a través de imágenes. Ideal si tienes inclinación artística y te interesa el mundo digital y creativo.\n\n⏱ Duración: 2-3 años' },
+      { titulo: '💡 ¿Cuál te conviene?', tipo: 'tip', contenido: 'Si quieres ir a la universidad, el Bachillerato en Ciencias y Letras es la mejor puerta. Si quieres trabajar pronto, el Magisterio, el Perito o el Secretariado te dan herramientas inmediatas. Si te apasiona lo creativo y digital, el Diseño Gráfico abre puertas únicas.' },
     ],
   },
   '3': {
