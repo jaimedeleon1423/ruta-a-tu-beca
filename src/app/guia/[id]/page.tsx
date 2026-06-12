@@ -35,7 +35,7 @@ const guias: Record<string, {
   },
   '3': {
     titulo: 'Cómo elegir el bachillerato adecuado', emoji: '🧭', modulo: 1,
-    foto: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&q=80q=80',
+    foto: '/guia-3-header.jpg',
     intro: 'Ya conoces las opciones. Ahora te ayudamos a tomar la mejor decisión para tu situación y tus metas.',
     prevId: 2, nextId: 4,
     secciones: [
