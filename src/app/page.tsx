@@ -9,9 +9,9 @@ const modulos = [
 ];
 
 const testimonios = [
-  { nombre: 'Guadalupe', carrera: '4° Magisterio · Palencia', quote: 'No está malo soñar, lo malo es no luchar por hacer tus sueños realidad.' },
-  { nombre: 'Laura Sofía', carrera: '4° Magisterio · Palencia', quote: 'Esta beca me está abriendo muchas puertas.' },
-  { nombre: 'Alison', carrera: 'Magisterio Preprimaria · Chinautla', quote: 'Ahora creo en mí y en todo lo que puedo lograr.' },
+  { nombre: 'Guadalupe', carrera: '4° Magisterio · Palencia', quote: 'No está malo soñar, lo malo es no luchar por hacer tus sueños realidad.', foto: '/guadalupe.jpg' },
+  { nombre: 'Laura Sofía', carrera: '4° Magisterio · Palencia', quote: 'Esta beca me está abriendo muchas puertas.', foto: '/laura.jpg' },
+  { nombre: 'Alison', carrera: 'Magisterio Preprimaria · Chinautla', quote: 'Ahora creo en mí y en todo lo que puedo lograr.', foto: '/alison.jpg' },
 ];
 
 const stats = [
@@ -92,13 +92,13 @@ export default function HomePage() {
         {/* FOTOS INSPIRACIONALES */}
         <div className="foto-row" style={{ marginBottom: 20 }}>
           {[
-            { url: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80q=80', caption: 'Estudiantes listos para el futuro' },
-            { url: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80q=80', caption: 'El conocimiento abre puertas' },
-            { url: 'https://images.unsplash.com/photo-1627556704302-624286467c65?w=600https://images.unsplash.com/photo-1504275107627-0c2ba7a43dba?w=600&q=80q=80', caption: 'Tu esfuerzo tiene recompensa' },
+            { url: '/guadalupe.jpg', caption: 'Guadalupe · Becada 2024' },
+            { url: '/laura.jpg', caption: 'Laura Sofía · Becada 2024' },
+            { url: '/alison.jpg', caption: 'Alison · Becada 2024' },
           ].map((foto, i) => (
             <div key={i} style={{ borderRadius: 18, overflow: 'hidden', position: 'relative', height: 200 }}>
-              <img src={foto.url} alt={foto.caption} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(transparent, rgba(0,0,0,0.6))', padding: '20px 16px 12px' }}>
+              <img src={foto.url} alt={foto.caption} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+              <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(transparent, rgba(0,0,0,0.65))', padding: '20px 16px 12px' }}>
                 <span style={{ color: 'white', fontSize: 13, fontWeight: 500 }}>{foto.caption}</span>
               </div>
             </div>
@@ -150,9 +150,9 @@ export default function HomePage() {
             {testimonios.map((t, i) => (
               <div key={i} style={{ background: 'white', borderRadius: 18, overflow: 'hidden', border: '1px solid var(--border)' }}>
                 <img
-                  src={i === 0 ? 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=400&q=80q=80' : i === 1 ? 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&q=80q=80' : 'https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=400https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400&q=80q=80'}
+                  src={t.foto}
                   alt={t.nombre}
-                  style={{ width: '100%', height: 160, objectFit: 'cover' }}
+                  style={{ width: '100%', height: 200, objectFit: 'cover', objectPosition: 'top' }}
                 />
                 <div style={{ padding: '16px' }}>
                   <p style={{ fontSize: 14, color: 'var(--text-primary)', lineHeight: 1.6, marginBottom: 14, fontStyle: 'italic' }}>
