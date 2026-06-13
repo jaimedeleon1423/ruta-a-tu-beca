@@ -39,172 +39,196 @@ const testimonios = [
 
 export default function BecaVistaHermosaPage() {
   return (
-    <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 40px 60px' }}>
+    <>
+      <style>{`
+        .vh-wrap { max-width: 1280px; margin: 0 auto; padding: 0 40px 60px; }
+        .vh-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 28px; }
+        .vh-body { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .vh-caract { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; }
+        .vh-testimonios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 28px; }
+        .vh-ctas { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .vh-header { border-radius: 24px; overflow: hidden; margin-bottom: 28px; position: relative; height: 320px; }
+        .vh-header-inner { position: absolute; inset: 0; padding: 28px 36px; display: flex; flex-direction: column; justify-content: space-between; }
 
-      {/* Header con foto */}
-      <div style={{
-        borderRadius: 24, overflow: 'hidden', marginBottom: 28,
-        position: 'relative', height: 320,
-      }}>
-        <img
-          src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1200https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1200&q=80q=80"
-          alt="Estudiantes guatemaltecos"
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-        />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(12,60,124,0.85) 0%, rgba(193,0,66,0.6) 100%)' }} />
-        <div style={{ position: 'absolute', inset: 0, padding: '28px 36px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-          <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: 'rgba(255,255,255,0.8)', textDecoration: 'none', fontSize: 14 }}>
-            <ArrowLeft size={16} /> Inicio
-          </Link>
-          <div>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'var(--rotaract-gold)', borderRadius: 99, padding: '4px 14px', marginBottom: 14 }}>
-              <Star size={12} color="white" fill="white" />
-              <span style={{ fontSize: 11, fontWeight: 700, color: 'white', letterSpacing: '0.05em' }}>BECA DESTACADA</span>
-            </div>
-            <h1 style={{ fontSize: 32, fontWeight: 800, color: 'white', lineHeight: 1.15, marginBottom: 8 }}>
-              Beca de Excelencia<br />Vista Hermosa
-            </h1>
-            <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.82)' }}>
-              Club Rotaract Guatemala Vista Hermosa · Para ciclo diversificado
-            </p>
-          </div>
-        </div>
-      </div>
+        @media (max-width: 767px) {
+          .vh-wrap { padding: 0 16px 48px; }
+          .vh-header { height: 260px; border-radius: 18px; margin-bottom: 16px; }
+          .vh-header-inner { padding: 18px 20px; }
+          .vh-header h1 { font-size: 24px !important; }
+          .vh-header p { font-size: 13px !important; }
+          .vh-stats { gap: 8px; margin-bottom: 16px; }
+          .vh-stat-card { padding: 14px 10px !important; }
+          .vh-stat-val { font-size: 18px !important; }
+          .vh-stat-label { font-size: 11px !important; }
+          .vh-body { grid-template-columns: 1fr; gap: 0; }
+          .vh-foto { display: none; }
+          .vh-caract { grid-template-columns: 1fr 1fr; gap: 8px; }
+          .vh-testimonios { grid-template-columns: 1fr; gap: 10px; }
+          .vh-ctas { grid-template-columns: 1fr; }
+          .vh-ctas a { font-size: 14px !important; padding: 14px !important; }
+        }
+      `}</style>
 
-      {/* STATS */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 28 }}>
-        {[
-          { icon: <Award size={20} color="var(--rotaract-cranberry)" />, valor: 'Q7,500', label: 'máximo al año' },
-          { icon: <Clock size={20} color="var(--rotaract-blue)" />, valor: '2–3 años', label: 'según tu carrera' },
-          { icon: <Zap size={20} color="#b86000" />, valor: '100%', label: 'matrícula y mensualidades' },
-        ].map((stat, i) => (
-          <div key={i} style={{ background: 'white', borderRadius: 16, padding: '18px', textAlign: 'center', border: '1px solid var(--border)' }}>
-            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 8 }}>{stat.icon}</div>
-            <div style={{ fontSize: 22, fontWeight: 800, color: 'var(--text-primary)', lineHeight: 1 }}>{stat.valor}</div>
-            <div style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 4 }}>{stat.label}</div>
-          </div>
-        ))}
-      </div>
+      <div className="vh-wrap">
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
-        <div>
-          {/* QUÉ ES */}
-          <div style={{ background: 'var(--rotaract-blue-light)', borderRadius: 16, padding: '20px', marginBottom: 20, border: '1px solid rgba(0,80,162,0.12)' }}>
-            <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
-              <BookOpen size={20} color="var(--rotaract-blue)" style={{ flexShrink: 0, marginTop: 2 }} />
-              <div>
-                <h2 style={{ fontSize: 16, fontWeight: 700, color: 'var(--rotaract-blue)', marginBottom: 8 }}>¿Qué es esta beca?</h2>
-                <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                  La Beca de Excelencia Vista Hermosa es otorgada por el Club Rotaract Guatemala Vista Hermosa. Cubre matrícula y mensualidades hasta Q7,500 anuales para que puedas estudiar tu diversificado sin preocuparte por los costos. Aplica para colegios públicos y privados, en modalidad presencial, híbrida o virtual.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* REQUISITOS */}
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: 'var(--text-primary)' }}>¿Puedo aplicar?</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
-            {requisitos.map((r, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, background: 'white', borderRadius: 12, padding: '12px 14px', border: '1px solid var(--border)' }}>
-                <span style={{ fontSize: 20 }}>{r.icon}</span>
-                <span style={{ fontSize: 14, color: 'var(--text-primary)', flex: 1 }}>{r.texto}</span>
-                <CheckCircle2 size={16} color="var(--rotaract-cranberry)" style={{ flexShrink: 0 }} />
-              </div>
-            ))}
-          </div>
-
-          {/* DOCUMENTOS */}
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: 'var(--text-primary)' }}>Documentos que necesitas</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
-            {documentos.map((d, i) => (
-              <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start', background: 'white', borderRadius: 14, padding: '14px', border: '1px solid var(--border)' }}>
-                <div style={{ width: 34, height: 34, borderRadius: 10, flexShrink: 0, background: 'var(--rotaract-cranberry)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 800, color: 'white' }}>{d.num}</div>
-                <div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 3 }}>{d.titulo}</div>
-                  <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.4 }}>{d.desc}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* EMAIL */}
-          <div style={{ background: '#fff8ec', border: '1.5px solid rgba(247,168,27,0.3)', borderRadius: 16, padding: '16px', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 12 }}>
-            <Mail size={20} color="#b86000" style={{ flexShrink: 0 }} />
+        {/* Header con foto */}
+        <div className="vh-header">
+          <img
+            src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1200https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1200&q=80q=80"
+            alt="Estudiantes guatemaltecos"
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(12,60,124,0.85) 0%, rgba(193,0,66,0.6) 100%)' }} />
+          <div className="vh-header-inner">
+            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: 'rgba(255,255,255,0.8)', textDecoration: 'none', fontSize: 14 }}>
+              <ArrowLeft size={16} /> Inicio
+            </Link>
             <div>
-              <div style={{ fontSize: 12, fontWeight: 600, color: '#b86000', marginBottom: 2 }}>Envía tu solicitud a</div>
-              <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-primary)', wordBreak: 'break-all' }}>becasrotaryvistahermosa@gmail.com</div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'var(--rotaract-gold)', borderRadius: 99, padding: '4px 14px', marginBottom: 14 }}>
+                <Star size={12} color="white" fill="white" />
+                <span style={{ fontSize: 11, fontWeight: 700, color: 'white', letterSpacing: '0.05em' }}>BECA DESTACADA</span>
+              </div>
+              <h1 className="vh-header" style={{ fontSize: 32, fontWeight: 800, color: 'white', lineHeight: 1.15, marginBottom: 8 }}>
+                Beca de Excelencia<br />Vista Hermosa
+              </h1>
+              <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.82)' }}>
+                Club Rotaract Guatemala Vista Hermosa · Para ciclo diversificado
+              </p>
             </div>
           </div>
         </div>
 
-        <div>
-          {/* FOTO */}
-          <div style={{ borderRadius: 20, overflow: 'hidden', marginBottom: 20, height: 220 }}>
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80q=80" alt="Estudiantes en clase" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-          </div>
-
-          {/* PERFIL IDEAL */}
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6, color: 'var(--text-primary)' }}>¿Qué busca la beca en ti?</h2>
-          <p style={{ fontSize: 13, color: 'var(--text-secondary)', marginBottom: 14 }}>El Rotaract evalúa estas características:</p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 20 }}>
-            {caracteristicas.map((c, i) => (
-              <div key={i} style={{ background: 'white', borderRadius: 14, padding: '14px 12px', border: '1px solid var(--border)' }}>
-                <span style={{ fontSize: 22, display: 'block', marginBottom: 6 }}>{c.icon}</span>
-                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 3 }}>{c.titulo}</div>
-                <div style={{ fontSize: 11, color: 'var(--text-secondary)', lineHeight: 1.4 }}>{c.desc}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* CONDICIONES */}
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: 'var(--text-primary)' }}>Si obtienes la beca, debes</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
-            {condiciones.map((c, i) => (
-              <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', background: '#f0faf4', borderRadius: 12, padding: '11px 13px', border: '1px solid rgba(26,122,60,0.14)' }}>
-                <CheckCircle2 size={16} color="#1a7a3c" style={{ flexShrink: 0, marginTop: 1 }} />
-                <span style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.4 }}>{c}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* TESTIMONIOS */}
-      <div style={{ marginTop: 8 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
-          <Users size={18} color="var(--rotaract-cranberry)" />
-          <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-primary)' }}>Quienes ya lo lograron</h2>
-        </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14, marginBottom: 28 }}>
-          {testimonios.map((t, i) => (
-            <div key={i} style={{ background: 'white', borderRadius: 18, overflow: 'hidden', border: '1px solid var(--border)', borderLeft: '4px solid var(--rotaract-cranberry)' }}>
-              <div style={{ padding: '18px' }}>
-                <p style={{ fontSize: 14, color: 'var(--text-primary)', lineHeight: 1.6, marginBottom: 14, fontStyle: 'italic' }}>
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <div style={{ width: 34, height: 34, borderRadius: '50%', background: 'var(--rotaract-cranberry-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700, color: 'var(--rotaract-cranberry)', flexShrink: 0 }}>{t.nombre[0]}</div>
-                  <div>
-                    <div style={{ fontSize: 13, fontWeight: 600 }}>{t.nombre}</div>
-                    <div style={{ fontSize: 11, color: 'var(--text-muted)' }}>{t.carrera}</div>
-                  </div>
-                </div>
-              </div>
+        {/* STATS */}
+        <div className="vh-stats">
+          {[
+            { icon: <Award size={20} color="var(--rotaract-cranberry)" />, valor: 'Q7,500', label: 'máximo al año' },
+            { icon: <Clock size={20} color="var(--rotaract-blue)" />, valor: '2–3 años', label: 'según tu carrera' },
+            { icon: <Zap size={20} color="#b86000" />, valor: '100%', label: 'matrícula y mensualidades' },
+          ].map((stat, i) => (
+            <div key={i} className="vh-stat-card" style={{ background: 'white', borderRadius: 16, padding: '18px', textAlign: 'center', border: '1px solid var(--border)' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 8 }}>{stat.icon}</div>
+              <div className="vh-stat-val" style={{ fontSize: 22, fontWeight: 800, color: 'var(--text-primary)', lineHeight: 1 }}>{stat.valor}</div>
+              <div className="vh-stat-label" style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 4 }}>{stat.label}</div>
             </div>
           ))}
         </div>
 
-        {/* CTAs */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-          <a href="mailto:becasrotaryvistahermosa@gmail.com" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, background: 'var(--rotaract-cranberry)', color: 'white', padding: '16px', borderRadius: 16, textDecoration: 'none', fontSize: 15, fontWeight: 700, boxShadow: '0 6px 24px rgba(193,0,66,0.3)' }}>
-            <Mail size={18} /> Enviar mi solicitud
-          </a>
-          <Link href="/modulo/3" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, background: 'transparent', color: 'var(--rotaract-cranberry)', border: '1.5px solid var(--rotaract-cranberry)', padding: '16px', borderRadius: 16, textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>
-            <Heart size={16} /> Prepárate para aplicar
-          </Link>
-        </div>
-      </div>
+        {/* BODY 2 columnas → 1 en móvil */}
+        <div className="vh-body">
+          {/* Columna izquierda */}
+          <div>
+            <div style={{ background: 'var(--rotaract-blue-light)', borderRadius: 16, padding: '20px', marginBottom: 20, border: '1px solid rgba(0,80,162,0.12)' }}>
+              <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                <BookOpen size={20} color="var(--rotaract-blue)" style={{ flexShrink: 0, marginTop: 2 }} />
+                <div>
+                  <h2 style={{ fontSize: 16, fontWeight: 700, color: 'var(--rotaract-blue)', marginBottom: 8 }}>¿Qué es esta beca?</h2>
+                  <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+                    La Beca de Excelencia Vista Hermosa es otorgada por el Club Rotaract Guatemala Vista Hermosa. Cubre matrícula y mensualidades hasta Q7,500 anuales para que puedas estudiar tu diversificado sin preocuparte por los costos. Aplica para colegios públicos y privados, en modalidad presencial, híbrida o virtual.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-    </div>
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: 'var(--text-primary)' }}>¿Puedo aplicar?</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
+              {requisitos.map((r, i) => (
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, background: 'white', borderRadius: 12, padding: '12px 14px', border: '1px solid var(--border)' }}>
+                  <span style={{ fontSize: 20 }}>{r.icon}</span>
+                  <span style={{ fontSize: 14, color: 'var(--text-primary)', flex: 1 }}>{r.texto}</span>
+                  <CheckCircle2 size={16} color="var(--rotaract-cranberry)" style={{ flexShrink: 0 }} />
+                </div>
+              ))}
+            </div>
+
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: 'var(--text-primary)' }}>Documentos que necesitas</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
+              {documentos.map((d, i) => (
+                <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start', background: 'white', borderRadius: 14, padding: '14px', border: '1px solid var(--border)' }}>
+                  <div style={{ width: 34, height: 34, borderRadius: 10, flexShrink: 0, background: 'var(--rotaract-cranberry)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 800, color: 'white' }}>{d.num}</div>
+                  <div>
+                    <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 3 }}>{d.titulo}</div>
+                    <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.4 }}>{d.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ background: '#fff8ec', border: '1.5px solid rgba(247,168,27,0.3)', borderRadius: 16, padding: '16px', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 12 }}>
+              <Mail size={20} color="#b86000" style={{ flexShrink: 0 }} />
+              <div>
+                <div style={{ fontSize: 12, fontWeight: 600, color: '#b86000', marginBottom: 2 }}>Envía tu solicitud a</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-primary)', wordBreak: 'break-all' }}>becasrotaryvistahermosa@gmail.com</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Columna derecha */}
+          <div>
+            <div className="vh-foto" style={{ borderRadius: 20, overflow: 'hidden', marginBottom: 20, height: 220 }}>
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80q=80" alt="Estudiantes en clase" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6, color: 'var(--text-primary)' }}>¿Qué busca la beca en ti?</h2>
+            <p style={{ fontSize: 13, color: 'var(--text-secondary)', marginBottom: 14 }}>El Rotaract evalúa estas características:</p>
+            <div className="vh-caract">
+              {caracteristicas.map((c, i) => (
+                <div key={i} style={{ background: 'white', borderRadius: 14, padding: '14px 12px', border: '1px solid var(--border)' }}>
+                  <span style={{ fontSize: 22, display: 'block', marginBottom: 6 }}>{c.icon}</span>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 3 }}>{c.titulo}</div>
+                  <div style={{ fontSize: 11, color: 'var(--text-secondary)', lineHeight: 1.4 }}>{c.desc}</div>
+                </div>
+              ))}
+            </div>
+
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: 'var(--text-primary)' }}>Si obtienes la beca, debes</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
+              {condiciones.map((c, i) => (
+                <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', background: '#f0faf4', borderRadius: 12, padding: '11px 13px', border: '1px solid rgba(26,122,60,0.14)' }}>
+                  <CheckCircle2 size={16} color="#1a7a3c" style={{ flexShrink: 0, marginTop: 1 }} />
+                  <span style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.4 }}>{c}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* TESTIMONIOS */}
+        <div style={{ marginTop: 8 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
+            <Users size={18} color="var(--rotaract-cranberry)" />
+            <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-primary)' }}>Quienes ya lo lograron</h2>
+          </div>
+          <div className="vh-testimonios">
+            {testimonios.map((t, i) => (
+              <div key={i} style={{ background: 'white', borderRadius: 18, overflow: 'hidden', border: '1px solid var(--border)', borderLeft: '4px solid var(--rotaract-cranberry)' }}>
+                <div style={{ padding: '18px' }}>
+                  <p style={{ fontSize: 14, color: 'var(--text-primary)', lineHeight: 1.6, marginBottom: 14, fontStyle: 'italic' }}>
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <div style={{ width: 34, height: 34, borderRadius: '50%', background: 'var(--rotaract-cranberry-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700, color: 'var(--rotaract-cranberry)', flexShrink: 0 }}>{t.nombre[0]}</div>
+                    <div>
+                      <div style={{ fontSize: 13, fontWeight: 600 }}>{t.nombre}</div>
+                      <div style={{ fontSize: 11, color: 'var(--text-muted)' }}>{t.carrera}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTAs */}
+          <div className="vh-ctas">
+            <a href="mailto:becasrotaryvistahermosa@gmail.com" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, background: 'var(--rotaract-cranberry)', color: 'white', padding: '16px', borderRadius: 16, textDecoration: 'none', fontSize: 15, fontWeight: 700, boxShadow: '0 6px 24px rgba(193,0,66,0.3)' }}>
+              <Mail size={18} /> Enviar mi solicitud
+            </a>
+            <Link href="/modulo/3" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, background: 'transparent', color: 'var(--rotaract-cranberry)', border: '1.5px solid var(--rotaract-cranberry)', padding: '16px', borderRadius: 16, textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>
+              <Heart size={16} /> Prepárate para aplicar
+            </Link>
+          </div>
+        </div>
+
+      </div>
+    </>
   );
 }
