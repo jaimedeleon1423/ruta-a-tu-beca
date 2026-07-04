@@ -45,7 +45,7 @@ const guias: Record<string, {
     secciones: [
       { titulo: 'Considera tus metas a largo plazo', contenido: '¿Quieres ir a la universidad? El Bachillerato en Ciencias y Letras es generalmente la mejor puerta de entrada.\n\n¿Quieres trabajar pronto? El Magisterio o el Perito Contador te dan herramientas para trabajar al graduarte.' },
       { titulo: 'Considera tu situación económica', contenido: 'La Beca Vista Hermosa es presencial, plan diario de lunes a viernes. Considera el costo del transporte y el tiempo de traslado al elegir tu colegio. El apoyo económico de la beca alivia mucho la carga de matrícula y mensualidades.' },
-      { titulo: 'Antes de decidir, verifica esto', tipo: 'checklist', contenido: 'Investiga qué colegios ofrecen esa carrera (no solo los cercanos)\\nConfirma que sea plan diario presencial, de lunes a viernes\\nPregunta el costo y si aceptan la beca Vista Hermosa\\nConsidera el tiempo y costo del transporte\\nHabla con alguien que ya esté en esa carrera' },
+      { titulo: 'Antes de decidir, verifica esto', tipo: 'checklist', contenido: 'Investiga qué colegios ofrecen esa carrera (no solo los cercanos)\nConfirma que sea plan diario presencial, de lunes a viernes\nPregunta el costo y si aceptan la beca Vista Hermosa\nConsidera el tiempo y costo del transporte\nHabla con alguien que ya esté en esa carrera' },
       { titulo: '⚠️ Importante', tipo: 'warning', contenido: 'Una vez inscrito, cambiar de carrera puede significar perder el año. Tómate el tiempo necesario para decidir bien antes de inscribirte.' },
     ],
   },
