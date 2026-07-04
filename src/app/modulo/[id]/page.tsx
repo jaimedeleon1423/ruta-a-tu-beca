@@ -4,17 +4,18 @@ import { notFound } from 'next/navigation';
 
 const modulos: Record<string, {
   id: number; emoji: string; title: string; color: string; accent: string; border: string;
-  foto: string; intro: string;
+  foto: string; intro: string; audiencia?: string;
   guias: { num: string; titulo: string; desc: string; href: string; }[];
 }> = {
   '1': {
     id: 1, emoji: '🧭', title: 'Descubre tu camino',
     color: '#e8f0fb', accent: '#0050a2', border: 'rgba(0,80,162,0.18)',
     foto: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80',
-    intro: 'Antes de buscar una beca, lo más importante es saber qué quieres estudiar y por qué. Estas guías te ayudarán a explorar tus intereses y conocer tus opciones.',
+    audiencia: 'Para estudiantes, padres de familia, maestros y orientadores',
+    intro: 'Antes de buscar una beca, lo más importante es saber qué quieres estudiar y por qué. Estas guías te ayudarán a explorar tus intereses, conocer tus opciones y entender el día a día de distintas carreras — porque elegir bien va más allá de lo que "paga bien".',
     guias: [
       { num: '01', titulo: '¿Qué quiero estudiar?', desc: 'Explora tus intereses, habilidades y lo que te apasiona para encontrar tu vocación.', href: '/guia/1' },
-      { num: '02', titulo: 'Tipos de bachillerato en Guatemala', desc: 'Conoce todas las opciones de diversificado: bachillerato, magisterio, perito y más.', href: '/guia/2' },
+      { num: '02', titulo: 'Tipos de bachillerato en Guatemala', desc: 'Conoce todas las opciones de diversificado presencial: bachillerato, magisterio, perito y más.', href: '/guia/2' },
       { num: '03', titulo: 'Cómo elegir el bachillerato adecuado', desc: 'Una guía práctica para tomar la mejor decisión según tus metas y situación.', href: '/guia/3' },
     ],
   },
@@ -22,20 +23,22 @@ const modulos: Record<string, {
     id: 2, emoji: '⭐', title: 'Encuentra una beca',
     color: '#fff3f7', accent: '#c10042', border: 'rgba(193,0,66,0.22)',
     foto: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&q=80',
-    intro: 'Hay oportunidades esperándote. Aquí aprenderás qué es exactamente una beca, cómo funciona la Beca Vista Hermosa y qué otras opciones existen en Guatemala.',
+    audiencia: 'Para estudiantes y padres de familia',
+    intro: 'Hay oportunidades esperándote. Aquí aprenderás qué es exactamente una beca, cómo funciona la Beca Vista Hermosa — que aplica para carreras de plan diario, presencial, de lunes a viernes — y qué otras opciones existen en Guatemala.',
     guias: [
       { num: '01', titulo: '¿Qué es una beca?', desc: 'Todo lo que necesitas saber sobre becas, cómo funcionan y qué tipos existen.', href: '/guia/4' },
-      { num: '02', titulo: 'Beca Vista Hermosa ⭐', desc: 'La oportunidad destacada de la plataforma: requisitos, dotación y proceso completo.', href: '/becas/vista-hermosa' },
-      { num: '03', titulo: 'Otras becas en Guatemala', desc: 'Un directorio de más oportunidades educativas para el diversificado.', href: '/guia/6' },
+      { num: '02', titulo: 'Beca Vista Hermosa ⭐', desc: 'La oportunidad destacada: requisitos, monto, proceso completo y qué debes contemplar si estudias en la ciudad.', href: '/becas/vista-hermosa' },
+      { num: '03', titulo: 'Otras becas en Guatemala', desc: 'Un directorio de más oportunidades educativas, con links a páginas oficiales.', href: '/guia/6' },
     ],
   },
   '3': {
     id: 3, emoji: '📋', title: 'Prepárate para aplicar',
     color: '#f0faf4', accent: '#1a7a3c', border: 'rgba(26,122,60,0.18)',
     foto: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=80',
-    intro: 'Aplicar a una beca requiere preparación. Estas guías te explican paso a paso todo lo que necesitas hacer para presentar la mejor solicitud posible.',
+    audiencia: 'Para estudiantes y orientadores',
+    intro: 'Aplicar a una beca requiere preparación. Estas guías te explican paso a paso todo lo que necesitas hacer para presentar la mejor solicitud posible. Recuerda: cada beca puede tener sus propios requisitos — siempre revisa el listado oficial.',
     guias: [
-      { num: '01', titulo: 'Documentos que necesitas', desc: 'Lista completa y explicada de todos los documentos que debes reunir.', href: '/guia/7' },
+      { num: '01', titulo: 'Documentos que necesitas', desc: 'Documentos base para la Beca Vista Hermosa y qué revisar para otras becas.', href: '/guia/7' },
       { num: '02', titulo: 'Cómo escribir tu ensayo', desc: 'Aprende a escribir una carta que realmente llame la atención.', href: '/guia/8' },
       { num: '03', titulo: 'La entrevista: cómo prepararte', desc: 'Consejos para presentarte con confianza y dejar una buena impresión.', href: '/guia/9' },
       { num: '04', titulo: 'Cómo construir tu perfil', desc: 'Actividades y actitudes que hacen que tu candidatura destaque.', href: '/guia/10' },
@@ -45,7 +48,8 @@ const modulos: Record<string, {
     id: 4, emoji: '💪', title: 'Sigue adelante',
     color: '#fff8ec', accent: '#b86000', border: 'rgba(184,96,0,0.18)',
     foto: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80',
-    intro: 'El proceso puede ser difícil, pero cada paso te hace crecer. Estas guías son para mantenerte fuerte sin importar lo que pase.',
+    audiencia: 'Para estudiantes, padres y orientadores',
+    intro: 'El proceso puede ser difícil, pero cada paso te hace crecer. Estas guías son para mantenerte fuerte sin importar lo que pase — y para aprovechar al máximo tu carrera una vez que empieces.',
     guias: [
       { num: '01', titulo: 'Si no obtienes la beca esta vez', desc: 'Qué hacer cuando las cosas no salen como esperabas. No es el fin.', href: '/guia/11' },
       { num: '02', titulo: 'Cómo mantener la motivación', desc: 'Técnicas y mentalidad para no rendirte en el camino hacia tu meta.', href: '/guia/12' },
@@ -91,6 +95,13 @@ export default async function ModuloPage({ params }: { params: Promise<{ id: str
           <div style={{ fontSize: 12, color: 'var(--text-muted)' }}>Módulo {mod.id} de 4</div>
         </div>
 
+        {/* Audiencia badge */}
+        {mod.audiencia && (
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: mod.color, border: `1px solid ${mod.border}`, borderRadius: 99, padding: '5px 14px', marginBottom: 16, fontSize: 12, fontWeight: 600, color: mod.accent }}>
+            👥 {mod.audiencia}
+          </div>
+        )}
+
         {/* Intro */}
         <div style={{ fontSize: 15, color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 32, padding: '16px 20px', background: mod.color, borderRadius: 14, border: `1px solid ${mod.border}`, borderLeft: `4px solid ${mod.accent}` }}>
           {mod.intro}
@@ -106,7 +117,6 @@ export default async function ModuloPage({ params }: { params: Promise<{ id: str
               display: 'flex', gap: 16, alignItems: 'center',
               background: 'white', borderRadius: 16, padding: '18px 20px',
               border: '1px solid var(--border)', textDecoration: 'none',
-              transition: 'border-color 0.15s',
             }}>
               <div style={{
                 width: 44, height: 44, borderRadius: 13, flexShrink: 0,
