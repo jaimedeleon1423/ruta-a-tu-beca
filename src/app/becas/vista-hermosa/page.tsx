@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowLeft, Star, CheckCircle2, Mail, BookOpen, Users, Heart, Award, Zap, Clock } from 'lucide-react';
+import { ArrowLeft, Star, CheckCircle2, Mail, BookOpen, Users, Heart, Award, Zap, Clock, AlertCircle } from 'lucide-react';
 
 const requisitos = [
   { icon: '🇬🇹', texto: 'Ser guatemalteco/a' },
@@ -9,9 +9,10 @@ const requisitos = [
 ];
 
 const documentos = [
-  { num: '01', titulo: 'Carta de solicitud', desc: 'Explica qué carrera deseas estudiar y por qué la elegiste' },
-  { num: '02', titulo: 'Calificaciones', desc: 'De los últimos 2 años de educación básica' },
+  { num: '01', titulo: 'Foto reciente', desc: 'Foto tamaño cédula o pasaporte, reciente' },
+  { num: '02', titulo: 'Carta de solicitud', desc: 'Explica qué carrera deseas estudiar y por qué la elegiste' },
   { num: '03', titulo: 'Carta de recomendación', desc: 'Del director de tu establecimiento de básico' },
+  { num: '04', titulo: 'Calificaciones', desc: 'De los últimos 2 años de educación básica' },
 ];
 
 const caracteristicas = [
@@ -31,6 +32,12 @@ const condiciones = [
   'Firmar el compromiso de aceptación de condiciones',
 ];
 
+const calendario = [
+  { mes: 'Julio', accion: 'Período para aplicar', desc: 'Prepara y envía tu solicitud con todos los documentos.', color: '#0050a2', bg: '#e8f0fb' },
+  { mes: 'Agosto', accion: 'Revisión de solicitudes', desc: 'El comité evalúa todas las aplicaciones recibidas.', color: '#b86000', bg: '#fff8ec' },
+  { mes: 'Septiembre', accion: 'Notificación de resultados', desc: 'Recibirás respuesta a tiempo para buscar otras opciones si es necesario.', color: '#1a7a3c', bg: '#f0faf4' },
+];
+
 const testimonios = [
   { nombre: 'Guadalupe Lemus', carrera: '4° Magisterio · Palencia', quote: 'No está malo soñar, lo malo es no luchar por hacer tus sueños realidad.' },
   { nombre: 'Ruth Santisteban', carrera: '5° Bachillerato · Mixco', quote: 'Gracias a esta beca, ese sueño está más cerca de hacerse realidad.' },
@@ -48,38 +55,32 @@ export default function BecaVistaHermosaPage() {
         .vh-testimonios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 28px; }
         .vh-ctas { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         .vh-header { border-radius: 24px; overflow: hidden; margin-bottom: 28px; position: relative; height: 320px; }
-        .vh-header-inner { position: absolute; inset: 0; padding: 28px 36px; display: flex; flex-direction: column; justify-content: space-between; }
+        .vh-cal { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 24px; }
 
         @media (max-width: 767px) {
           .vh-wrap { padding: 0 16px 48px; }
           .vh-header { height: 260px; border-radius: 18px; margin-bottom: 16px; }
-          .vh-header-inner { padding: 18px 20px; }
-          .vh-header h1 { font-size: 24px !important; }
-          .vh-header p { font-size: 13px !important; }
           .vh-stats { gap: 8px; margin-bottom: 16px; }
           .vh-stat-card { padding: 14px 10px !important; }
           .vh-stat-val { font-size: 18px !important; }
           .vh-stat-label { font-size: 11px !important; }
           .vh-body { grid-template-columns: 1fr; gap: 0; }
           .vh-foto { display: none; }
-          .vh-caract { grid-template-columns: 1fr 1fr; gap: 8px; }
+          .vh-caract { grid-template-columns: 1fr 1fr; }
           .vh-testimonios { grid-template-columns: 1fr; gap: 10px; }
           .vh-ctas { grid-template-columns: 1fr; }
           .vh-ctas a { font-size: 14px !important; padding: 14px !important; }
+          .vh-cal { grid-template-columns: 1fr; }
         }
       `}</style>
 
       <div className="vh-wrap">
 
-        {/* Header con foto */}
+        {/* Header */}
         <div className="vh-header">
-          <img
-            src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1200https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1200&q=80q=80"
-            alt="Estudiantes guatemaltecos"
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          />
+          <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1200&q=80" alt="Beca Vista Hermosa" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(12,60,124,0.85) 0%, rgba(193,0,66,0.6) 100%)' }} />
-          <div className="vh-header-inner">
+          <div style={{ position: 'absolute', inset: 0, padding: '28px 36px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: 'rgba(255,255,255,0.8)', textDecoration: 'none', fontSize: 14 }}>
               <ArrowLeft size={16} /> Inicio
             </Link>
@@ -88,11 +89,11 @@ export default function BecaVistaHermosaPage() {
                 <Star size={12} color="white" fill="white" />
                 <span style={{ fontSize: 11, fontWeight: 700, color: 'white', letterSpacing: '0.05em' }}>BECA DESTACADA</span>
               </div>
-              <h1 className="vh-header" style={{ fontSize: 32, fontWeight: 800, color: 'white', lineHeight: 1.15, marginBottom: 8 }}>
+              <h1 style={{ fontSize: 32, fontWeight: 800, color: 'white', lineHeight: 1.15, marginBottom: 8 }}>
                 Beca de Excelencia<br />Vista Hermosa
               </h1>
               <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.82)' }}>
-                Club Rotaract Guatemala Vista Hermosa · Para ciclo diversificado
+                Club Rotaract Guatemala Vista Hermosa · Plan diario, presencial, lunes a viernes
               </p>
             </div>
           </div>
@@ -101,9 +102,9 @@ export default function BecaVistaHermosaPage() {
         {/* STATS */}
         <div className="vh-stats">
           {[
-            { icon: <Award size={20} color="var(--rotaract-cranberry)" />, valor: 'Q7,500', label: 'máximo al año' },
-            { icon: <Clock size={20} color="var(--rotaract-blue)" />, valor: '2–3 años', label: 'según tu carrera' },
-            { icon: <Zap size={20} color="#b86000" />, valor: '100%', label: 'matrícula y mensualidades' },
+            { icon: <Award size={20} color="var(--rotaract-cranberry)" />, valor: 'Q7,500', label: 'máximo al año (matrícula + mensualidades)' },
+            { icon: <Clock size={20} color="var(--rotaract-blue)" />, valor: '2–3 años', label: 'según la carrera elegida' },
+            { icon: <Zap size={20} color="#b86000" />, valor: '100%', label: 'cubre matrícula y mensualidades' },
           ].map((stat, i) => (
             <div key={i} className="vh-stat-card" style={{ background: 'white', borderRadius: 16, padding: '18px', textAlign: 'center', border: '1px solid var(--border)' }}>
               <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 8 }}>{stat.icon}</div>
@@ -113,7 +114,18 @@ export default function BecaVistaHermosaPage() {
           ))}
         </div>
 
-        {/* BODY 2 columnas → 1 en móvil */}
+        {/* AVISO plan presencial */}
+        <div style={{ background: '#fff8ec', border: '1.5px solid rgba(247,168,27,0.35)', borderRadius: 14, padding: '14px 18px', marginBottom: 24, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+          <AlertCircle size={18} color="#b86000" style={{ flexShrink: 0, marginTop: 2 }} />
+          <div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#b86000', marginBottom: 4 }}>Modalidad presencial · Plan diario</div>
+            <p style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
+              Esta beca aplica únicamente para carreras de plan diario, de lunes a viernes, en modalidad presencial. Si el colegio está en la ciudad de Guatemala, debes contemplar tiempos de traslado, transporte y costos adicionales al planificar tu presupuesto.
+            </p>
+          </div>
+        </div>
+
+        {/* BODY */}
         <div className="vh-body">
           {/* Columna izquierda */}
           <div>
@@ -123,7 +135,7 @@ export default function BecaVistaHermosaPage() {
                 <div>
                   <h2 style={{ fontSize: 16, fontWeight: 700, color: 'var(--rotaract-blue)', marginBottom: 8 }}>¿Qué es esta beca?</h2>
                   <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                    La Beca de Excelencia Vista Hermosa es otorgada por el Club Rotaract Guatemala Vista Hermosa. Cubre matrícula y mensualidades hasta Q7,500 anuales para que puedas estudiar tu diversificado sin preocuparte por los costos. Aplica para colegios públicos y privados, en modalidad presencial, híbrida o virtual.
+                    La Beca de Excelencia Vista Hermosa es otorgada por el Club Rotaract Guatemala Vista Hermosa. Cubre matrícula y mensualidades hasta Q7,500 anuales para que puedas estudiar tu diversificado en modalidad presencial, plan diario. Aplica para colegios que ofrezcan la carrera de tu elección.
                   </p>
                 </div>
               </div>
@@ -140,7 +152,8 @@ export default function BecaVistaHermosaPage() {
               ))}
             </div>
 
-            <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: 'var(--text-primary)' }}>Documentos que necesitas</h2>
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6, color: 'var(--text-primary)' }}>Documentos — Beca Vista Hermosa</h2>
+            <p style={{ fontSize: 12, color: 'var(--text-muted)', marginBottom: 12 }}>Estos son los documentos base para esta beca. Cada beca puede tener requisitos distintos — siempre revisa el listado oficial.</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
               {documentos.map((d, i) => (
                 <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start', background: 'white', borderRadius: 14, padding: '14px', border: '1px solid var(--border)' }}>
@@ -164,8 +177,8 @@ export default function BecaVistaHermosaPage() {
 
           {/* Columna derecha */}
           <div>
-            <div className="vh-foto" style={{ borderRadius: 20, overflow: 'hidden', marginBottom: 20, height: 220 }}>
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80q=80" alt="Estudiantes en clase" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div className="vh-foto" style={{ borderRadius: 20, overflow: 'hidden', marginBottom: 20, height: 200 }}>
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="Estudiantes" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
 
             <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6, color: 'var(--text-primary)' }}>¿Qué busca la beca en ti?</h2>
@@ -190,6 +203,19 @@ export default function BecaVistaHermosaPage() {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* CALENDARIO */}
+        <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 6 }}>Calendario de aplicación</h2>
+        <p style={{ fontSize: 13, color: 'var(--text-secondary)', marginBottom: 14 }}>Los resultados se notifican en septiembre para que tengas tiempo de buscar otras opciones si es necesario.</p>
+        <div className="vh-cal">
+          {calendario.map((c, i) => (
+            <div key={i} style={{ background: c.bg, borderRadius: 16, padding: '18px', border: `1.5px solid ${c.color}22` }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: c.color, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 6 }}>{c.mes}</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 6 }}>{c.accion}</div>
+              <p style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>{c.desc}</p>
+            </div>
+          ))}
         </div>
 
         {/* TESTIMONIOS */}
